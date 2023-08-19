@@ -85,7 +85,7 @@ nextDay(secDay,1);
 nextDay(thirdDay,2);
 }
 async function serchApi(term){
-var data=await fetch(`http://api.weatherapi.com/v1/search.json?key=da9b131d88484659b04233829230408&q=${term}`);
+var data=await fetch(`https://api.weatherapi.com/v1/search.json?key=da9b131d88484659b04233829230408&q=${term}`);
 var finalRes=await data.json();
 if(finalRes.length==0){
     return lastCity ;
@@ -95,7 +95,7 @@ if(finalRes.length==0){
 }
 }
 async function getdata(term){
-var data=await fetch(`http://api.weatherapi.com/v1/forecast.json?key=da9b131d88484659b04233829230408&q=${term}&days=3&aqi=no&alerts=no`);
+var data=await fetch(`https://api.weatherapi.com/v1/forecast.json?key=da9b131d88484659b04233829230408&q=${term}&days=3&aqi=no&alerts=no`);
 responce=await data.json();
 }
 

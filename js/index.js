@@ -95,7 +95,7 @@ if(finalRes.length==0){
 }
 }
 async function getdata(term){
-data=await fetch(`http://api.weatherapi.com/v1/forecast.json?key=da9b131d88484659b04233829230408&q=${term}&days=3&aqi=no&alerts=no`);
+var data=await fetch(`http://api.weatherapi.com/v1/forecast.json?key=da9b131d88484659b04233829230408&q=${term}&days=3&aqi=no&alerts=no`);
 responce=await data.json();
 }
 

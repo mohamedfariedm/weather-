@@ -44,6 +44,7 @@ background-color: #1E202B;
 }
 .w-35{
   width: 25%;
+  transform: translateX(15%);
 }
 .pos-aps{
   top: 10%;
@@ -112,4 +113,7 @@ font-weight: 500;
 }
 .overflow-x-clip{
   overflow-x: clip;
+}
+.w-90{
+  width: 90%;
 }

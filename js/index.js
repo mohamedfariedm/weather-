@@ -115,7 +115,7 @@ async function statApp(){
     await getLocationUser()
     if(jsonResponse.city==null||jsonResponse.city==""||jsonResponse.city==undefined){
         jsonResponse="cairo";
-        await getdata(jsonResponse.city);
+        await getdata(jsonResponse);
         show();
     }else{
         await getdata(jsonResponse.city);

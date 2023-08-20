@@ -110,3 +110,6 @@ font-weight: 500;
 .hight-inherit{
   height: inherit;
 }
+.overflow-x-clip{
+  overflow-x: clip;
+}

@@ -1,5 +1,6 @@
 let responce;
 let lastCity;
+let jsonResponse;
 let city,temp,icon,condition,speed,umperalla,direction;
 let month=["January" ,"February" ,"March" ,"April" ,"May"  ,"June" ,"July" ,"August" ,"September" ,"October" ,"November" ,"December"];
 let day=["Sunday","Monday","Tuesday","Wednesday", "Thursday", "Friday", "Saturday" ];
@@ -106,15 +107,19 @@ serchIcon.addEventListener("input",async function(){
     show();
     }
 })
+async function getLocationUser(){
+    const request = await fetch("https://ipinfo.io/json?token=df7c770f77cede")
+    jsonResponse = await request.json()
+}
 async function statApp(){
-    await getdata("cairo");
-    show();
+    await getLocationUser()
+    if(jsonResponse.city==null||jsonResponse.city==""||jsonResponse.city==undefined){
+        jsonResponse="cairo";
+        await getdata(jsonResponse.city);
+        show();
+    }else{
+        await getdata(jsonResponse.city);
+        show();
+    }
 }
 statApp();
-
-
-
-
-
-
-

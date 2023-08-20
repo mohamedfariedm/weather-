@@ -36,7 +36,6 @@ function windUmperalla(){
 }
 function windDirection(){
     let direct;
-    console.log(responce.current.wind_dir)
     switch (responce.current.wind_dir[0]) {
         case "E":
             direct="East";
@@ -108,9 +107,14 @@ serchIcon.addEventListener("input",async function(){
     }
 })
 async function getLocationUser(){
-    const request = await fetch("https://ipinfo.io/json?token=df7c770f77cede")
+
+    const request1 = await fetch('https://api.ipify.org?format=json')
+    jsonResponse1=await request1.json();
+    const request = await fetch(`https://api.apilayer.com/ip_to_location/${jsonResponse1.ip}?apikey=whAyqv6a7x4niEt8oIGiiwAtqKxXOQzr`)
     jsonResponse = await request.json()
+    // console.log(jsonResponse)
 }
+
 async function statApp(){
     await getLocationUser()
     if(jsonResponse.city==null||jsonResponse.city==""||jsonResponse.city==undefined){

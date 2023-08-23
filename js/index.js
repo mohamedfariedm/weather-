@@ -87,7 +87,7 @@ nextDay(thirdDay,2);
 async function serchApi(term){
 var data=await fetch(`https://api.weatherapi.com/v1/search.json?key=da9b131d88484659b04233829230408&q=${term}`);
 var finalRes=await data.json();
-if(finalRes.length==0){
+if(finalRes.length==0&&data.status==200){
     return lastCity ;
 }else{
     lastCity=finalRes[0].name
@@ -126,4 +126,4 @@ async function statApp(){
         show();
     }
 }
-statApp();
+// statApp();
